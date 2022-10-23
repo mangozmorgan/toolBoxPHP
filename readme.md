@@ -14,11 +14,10 @@ Nothing really hard but you need to do some little things
 
 ## List of functions
 ----
-### nicePrint()
+## nicePrint()
 
 A nice mix with "var_dump" and "print_r functions" working with Array/String/Object (multidimentionnal too ) 
-#### Usage
-##### Simple
+### Usage
 
 ```php
 // make datas
@@ -40,35 +39,29 @@ $myArray = array(
 ); 
 
 // call the function with no flag
-nicePrint($yourVariable)
+nicePrint($yourVariable);
+
+// call the function with color flag to true
+nicePrint($yourVariable,true);
 
 ```
+
+|  Simple |  Colored |
+|:------------:|:-------------:|
+| No flag : **nicePrint**( $yourVariable ); | Color flag : **nicePrint**( $yourVariable,true ); |
+| ![Screenshot](img/simple.png) | ![Screenshot](img/colored.png) |
+
+
 ###### Output
 ![Screenshot](img/simple.png)
 ##### With nice colors
 
-```php
-//make datas
-$object2 = new stdClass();
-$object2->ingredient = "sucre";
-$object2->cook = "30mn";
 
-$fruits = array('banana','strawberry','apple',$object2);
-
-$object = new stdClass();
-$object->propriete1 = "test";
-$object->propriete2 = $fruits;
-
-// call the function with the 'color' flag to true 
-nicePrint($yourVariable,true)
-
-```
-###### Output
-![Screenshot](img/colored.png)
----
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+
 
