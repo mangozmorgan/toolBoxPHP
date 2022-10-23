@@ -1,9 +1,14 @@
 <?php
 
 
-function iterateArrayRecursive($data,$spacing = 2){
+function iterateArrayRecursive($data,$spacing = 2,$second = false){
     $colorArray = ['#2ecc71','#f1c40f','#e67e22','#3c40c6'];
     foreach( $data as $key => $value ){
+
+        if($second === true ){
+            $spacing++;
+            $second = false;
+        }
 
         $color =$colorArray[array_rand($colorArray)] ;
 
@@ -20,14 +25,20 @@ function iterateArrayRecursive($data,$spacing = 2){
             }
 
             echo '<span style="margin-left: '.$spacing.'rem;line-height:2rem;"><span >['.$key.']  <span style="color: '.$color.';font-style: italic ;font-weight: bold;">'.$type.' '.$class.'</span></span> (<span style="color: '.$color.';">'.count($value).'</span>) ➡ </span><br>';
-            $spacing ++;
-            echo "<span style='margin-left: ".$spacing."rem;color: ".$color.";font-weight: bold;'>{</span><br>";
-            $spacing ++;
-            iterateArrayRecursive($value,$spacing);
 
-            $spacing --;
+//            if($key == 0 ){
+//
+//                $spacing ++;
+//            }
+            echo "<span style='margin-left: ".$spacing."rem;color: ".$color.";font-weight: bold;'>{</span><br>";
+//            $spacing ++;
+            iterateArrayRecursive($value,$spacing,true);
+
+//            $spacing --;
             echo "<span style='margin-left: ".$spacing."rem;color: ".$color.";font-weight: bold;'>}</span><br>";
         }else{
+
+
             $count = strlen($value);
             echo "<span style='margin-left: ".$spacing."rem;'>"."[$key] ➡ ".$value.' <small style="color: #d703d7;font-style: italic">String ('.$count.')</small></span><br>';
         }
