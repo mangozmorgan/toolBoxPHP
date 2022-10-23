@@ -59,7 +59,7 @@ $object = new stdClass();
 $object->propriete1 = "test";
 $object->propriete2 = $fruits;
 
-// call the function with the 'color' to true 
+// call the function with the 'color' flag to true 
 nicePrint($yourVariable,true)
 
 ```
