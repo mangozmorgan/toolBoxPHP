@@ -9,7 +9,7 @@ Nothing really hard but you need to do some little things
 - Open your PHP root file ( For example mine is : C:\wamp64\bin\php\php7.3.33 ) create a new directory a name it "toolBoxPHP"
 - Copy the file 'toolBox.php' inside
 - Go to php.ini and modify this ligne :  "auto_prepend_file=" to "auto_prepend_file='YOURPATH'" ( Mine is : "auto_prepend_file='C:\wamp64\bin\php\php7.3.33\toolBoxPHP\toolBox.php'"
-- Enjoy your life 🎉🎉
+- Restart Wamp && Enjoy your life 🎉🎉
 
 
 ## List of functions
