@@ -14,7 +14,7 @@ Nothing really hard but you need to do some little things
 
 ## List of functions
 
-### nicePrint()
+<ins>### nicePrint()</ins>
 A nice mix with "var_dump" and "print_r functions" working with Array/String/Object (multidimentionnal too ) 
 #### Usage
 ##### Simple
