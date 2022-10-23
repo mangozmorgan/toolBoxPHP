@@ -6,7 +6,7 @@ Here you find some little tools for make your PHP way more easier
 
 Nothing really hard but you need to do some little things
 
-- Open your PHP root file ( For example mine is : C:\wamp64\bin\php\php7.3.33 ) create a new directory a name it "toolBoxPHP"
+- Open your PHP version root file ( For example mine is : C:\wamp64\bin\php\php7.3.33 ) create a new directory a name it "toolBoxPHP"
 - Copy the file 'toolBox.php' inside
 - Go to php.ini and modify this ligne :  "auto_prepend_file=" to "auto_prepend_file='YOURPATH'" ( Mine is : "auto_prepend_file='C:\wamp64\bin\php\php7.3.33\toolBoxPHP\toolBox.php'"
 - Restart Wamp && Enjoy your life 🎉🎉
@@ -48,15 +48,9 @@ nicePrint($yourVariable,true);
 
 |  Simple |  Colored |
 |:------------:|:-------------:|
-| No flag : **nicePrint**( $yourVariable ); | Color flag : **nicePrint**( $yourVariable,true ); |
+| No flags | Color flag |
+| **nicePrint**( $yourVariable ); | **nicePrint**( $yourVariable,true ); |
 | ![Screenshot](img/simple.png) | ![Screenshot](img/colored.png) |
-
-
-###### Output
-![Screenshot](img/simple.png)
-##### With nice colors
-
-
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
