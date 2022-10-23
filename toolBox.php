@@ -7,15 +7,26 @@ function iterateArrayRecursive($data,$spacing = 2){
 
         $color =$colorArray[array_rand($colorArray)] ;
 
-        if ( is_array($value) ){
-            echo '<span style="margin-left: '.$spacing.'rem;line-height:2rem;"><span >['.$key.'] ➡ <span style="color: '.$color.';font-style: italic "> Array</span></span> (<span style="color: '.$color.';">'.count($value).'</span>) ➡ </span><br>';
+        if ( is_array($value) || is_object($value) ){
+
+            $type = "Array";
+            $class = '';
+
+            if ( is_object($value) ){
+                $class = get_class($value);
+                $value = (array)$value;
+                $type = "Object";
+
+            }
+
+            echo '<span style="margin-left: '.$spacing.'rem;line-height:2rem;"><span >['.$key.']  <span style="color: '.$color.';font-style: italic ;font-weight: bold;">'.$type.' '.$class.'</span></span> (<span style="color: '.$color.';">'.count($value).'</span>) ➡ </span><br>';
             $spacing ++;
-            echo "<span style='margin-left: ".$spacing."rem;color: ".$color."'>{</span><br>";
+            echo "<span style='margin-left: ".$spacing."rem;color: ".$color.";font-weight: bold;'>{</span><br>";
             $spacing ++;
             iterateArrayRecursive($value,$spacing);
 
             $spacing --;
-            echo "<span style='margin-left: ".$spacing."rem;color: ".$color."'>}</span><br>";
+            echo "<span style='margin-left: ".$spacing."rem;color: ".$color.";font-weight: bold;'>}</span><br>";
         }else{
             $count = strlen($value);
             echo "<span style='margin-left: ".$spacing."rem;'>"."[$key] ➡ ".$value.' <small style="color: #d703d7;font-style: italic">String ('.$count.')</small></span><br>';
@@ -33,12 +44,20 @@ function nicePrint($data){
 
     if( is_array($data) ){
         $count = count($data);
-        echo '<span style="line-height:1.5rem;font-family: Arial;"><span ><span style="color: dodgerblue;font-style: italic "> Array('.$count.') ➡</span><br><span>(</span><br>';
+        echo '<span style="line-height:1.5rem;font-family: Arial;"><span ><span style="color: dodgerblue;font-style: italic ;font-weight: bold;"> Array('.$count.') ➡</span><br><span style="font-weight: bold;color: dodgerblue">{</span><br>';
         iterateArrayRecursive($data);
-        echo "<span>)</span><br>";
+        echo "<span style='font-weight: bold;color:dodgerblue '>}</span><br>";
 
     }elseif( is_string($data) ){
         $countString = strlen($data);
-        echo "<span style='font-family: Arial;'><span style='color: #d703d7;font-style: italic'>String </span>".$data."($countString)</span>";
+        echo "<span style='font-family: Arial;font-weight: bold;'><span style='color: #d703d7;font-style: italic;font-weight: bold;'>String </span>".$data."($countString)</span>";
+    }elseif( is_object($data) ){
+
+        $class = get_class($data);
+        $data = (array)$data;
+        $countObject = count($data);
+        echo "<span style='font-family: Arial;line-height:1.5rem;font-weight: bold;'><span style='color: #ff4c00;font-style: italic;font-weight: bold;'>Object ".$class." </span>($countObject){</span><br>";
+        iterateArrayRecursive($data);
+        echo "<span>}</span><br>";
     }
 }

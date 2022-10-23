@@ -1,5 +1,14 @@
 <?php
 include_once './toolBox.php';
+$object2 = new stdClass();
+$object2->ingredient = "sucre";
+$object2->cook = "30mn";
+
+$fruits = array('banana','strawberry','apple',$object2);
+
+$object = new stdClass();
+$object->propriete1 = "test";
+$object->propriete2 = $fruits;
 
 $test = array(
     "myKey" =>'My first string',
@@ -10,20 +19,22 @@ $test = array(
             1 => array(
                 0=> 'Hm , this is a string too',
                 1 => 'Again again again'
-            )
+            ),
+            2 =>$object
+
         )
     ));
 
-
+// TODO à venir : array avec plusieur array au meme niveau
 $test2 = array('salut');
-nicePrint($test);
+nicePrint2($test);
 
 echo"<pre>";
 var_dump($test);
 echo"</pre>";
 
-nicePrint('Salut tu va bien ?');
-
+//nicePrint('Salut tu va bien ?');
+//
 
 
 
