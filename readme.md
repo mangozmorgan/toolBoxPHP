@@ -15,7 +15,7 @@ Nothing really hard but you need to do some little things
 ## List of functions
 
 ### nicePrint()
-A nice mix with "var_dump" and "print_r functions"
+A nice mix with "var_dump" and "print_r functions" working with Array/String/Object (multidimentionnal too ) 
 #### Usage
 ##### Simple
 
@@ -39,9 +39,7 @@ $myArray = array(
 ); 
 ```
 ###### Output
-```html
-<h1>Coucou</h1>
-```
+![Screenshot](img/simple.png)
 ##### With nice colors
 
 ```php
@@ -60,9 +58,7 @@ nicePrint($yourVariable,true)
 
 ```
 ###### Output
-```html
-<h1>Coucou</h1>
-```
+![Screenshot](img/simple.png)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
