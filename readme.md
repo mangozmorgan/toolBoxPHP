@@ -20,7 +20,7 @@ A nice mix with "var_dump" and "print_r functions" working with Array/String/Obj
 ##### Simple
 
 ```php
-
+// make datas
 $myArray = array(
     array(
         0=> 'Hm , hey',
@@ -37,13 +37,17 @@ $myArray = array(
         )
     )
 ); 
+
+// call the function with no flag
+nicePrint($yourVariable)
+
 ```
 ###### Output
 ![Screenshot](img/simple.png)
 ##### With nice colors
 
 ```php
-
+//make datas
 $object2 = new stdClass();
 $object2->ingredient = "sucre";
 $object2->cook = "30mn";
@@ -54,6 +58,7 @@ $object = new stdClass();
 $object->propriete1 = "test";
 $object->propriete2 = $fruits;
 
+// call the function with the 'color' to true 
 nicePrint($yourVariable,true)
 
 ```
