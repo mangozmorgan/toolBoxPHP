@@ -63,6 +63,10 @@ function iterateArrayRecursive($data,$color = false,$spacing = 2,$second = false
 
 function nicePrint($data,$color = false){
 
+    echo '<br>';
+    echo '<br>';
+
+
     $backtrace = debug_backtrace();
     $line = $backtrace[0]['line'];
     $file = $backtrace[0]['file'];
@@ -93,4 +97,5 @@ function nicePrint($data,$color = false){
         iterateArrayRecursive($data,$color);
         echo "<span>}</span><br>";
     }
+    echo '<br>';
 }
